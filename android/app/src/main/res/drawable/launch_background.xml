@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- The window background shown between process start and Flutter's first
+     frame. It is a flat brand-tinted colour (not the logo) so it blends
+     seamlessly into the animated splash the app draws a moment later — the
+     logo animation should start from nothing, not pop over a static copy of
+     itself. `launch_background` is colour-resource-swapped in values-night. -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@color/launch_background"/>
+</layer-list>

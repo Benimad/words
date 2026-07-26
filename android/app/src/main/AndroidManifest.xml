@@ -1,0 +1,81 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Ads and store purchases need the network. The core game does not:
+         every puzzle is generated on-device and all progress is stored
+         locally, so the app is fully playable in airplane mode. -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <!-- Advertising ID, required by the Google Mobile Ads SDK on API 33+.
+         Remove this line if you strip ads out of your build. -->
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
+
+    <!-- Haptic feedback for selections and rewards. -->
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
+    <application
+        android:label="WordQuest"
+        android:name="${applicationName}"
+        android:icon="@mipmap/ic_launcher"
+        android:enableOnBackInvokedCallback="true">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:taskAffinity=""
+            android:theme="@style/LaunchTheme"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
+            android:hardwareAccelerated="true"
+            android:windowSoftInputMode="adjustResize">
+
+            <!-- Theme shown once the process has started, behind the Flutter
+                 UI. It matches the app's own splash background so launch reads
+                 as one continuous animation with no white flash. -->
+            <meta-data
+              android:name="io.flutter.embedding.android.NormalTheme"
+              android:resource="@style/NormalTheme"
+              />
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <!-- AdMob application ID.
+             This is Google's public *sample* app ID, safe for development.
+             WARNING: replace it with your own ID from the AdMob console before
+             publishing — shipping the sample ID will get your app rejected. -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3940256099942544~3347511713"/>
+
+        <!-- Moves ad SDK initialisation and ad loading off the launch path, so
+             the splash screen is never blocked by ad setup. -->
+        <meta-data
+            android:name="com.google.android.gms.ads.flag.OPTIMIZE_INITIALIZATION"
+            android:value="true"/>
+        <meta-data
+            android:name="com.google.android.gms.ads.flag.OPTIMIZE_AD_LOADING"
+            android:value="true"/>
+
+        <!-- Don't delete the meta-data below.
+             This is used by the Flutter tool to generate GeneratedPluginRegistrant.java -->
+        <meta-data
+            android:name="flutterEmbedding"
+            android:value="2" />
+    </application>
+
+    <!-- Required to query activities that can process text, see:
+         https://developer.android.com/training/package-visibility and
+         https://developer.android.com/reference/android/content/Intent#ACTION_PROCESS_TEXT.
+
+         In particular, this is used by the Flutter engine in io.flutter.plugin.text.ProcessTextPlugin. -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.PROCESS_TEXT"/>
+            <data android:mimeType="text/plain"/>
+        </intent>
+    </queries>
+</manifest>

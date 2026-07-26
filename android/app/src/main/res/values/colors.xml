@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Brand colours mirrored from lib/core/theme/app_palette.dart, so the native
+     launch screen and the Flutter UI cannot drift apart. -->
+<resources>
+    <color name="brand_violet">#6C4CF1</color>
+    <color name="brand_violet_dark">#4A2FC7</color>
+    <color name="brand_violet_light">#9B85FF</color>
+    <color name="brand_teal">#21C7BE</color>
+    <color name="brand_amber">#FFB020</color>
+    <color name="brand_rose">#F472B6</color>
+    <color name="brand_sky">#38BDF8</color>
+
+    <!-- Launch background: matches AppPalette.dawn (light) / night (dark). -->
+    <color name="launch_background">#F7F5FF</color>
+</resources>

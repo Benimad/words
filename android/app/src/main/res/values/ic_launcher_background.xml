@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Sampled from the launcher artwork by tool/generate_icons_from_image.py -->
+<resources>
+    <color name="ic_launcher_background">#3E277E</color>
+</resources>

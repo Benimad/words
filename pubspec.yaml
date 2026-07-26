@@ -1,0 +1,56 @@
+name: wordquest
+description: "WordQuest — a modern, original word-search adventure game."
+publish_to: 'none'
+
+# version: <semantic version>+<build number / versionCode>
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.11.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+
+  # --- State management -------------------------------------------------
+  # Provider keeps the app's controllers (ChangeNotifier) available to the
+  # widget tree without pulling in code generation or heavy tooling.
+  provider: ^6.1.2
+
+  # --- Persistence ------------------------------------------------------
+  # All progress is stored locally so the game is fully playable offline.
+  shared_preferences: ^2.3.2
+
+  # --- Audio ------------------------------------------------------------
+  audioplayers: ^6.1.0
+
+  # --- Monetisation -----------------------------------------------------
+  # Ads are wrapped behind AdService; the game runs fine when ads are
+  # unavailable or disabled (see lib/data/services/ad_service.dart).
+  google_mobile_ads: ^5.2.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/audio/
+
+  # Both families are variable fonts (single file, `wght` axis). Flutter
+  # applies FontWeight by varying the axis, so one asset covers 400-800.
+  # Both are licensed under the SIL Open Font License (see assets/fonts/OFL-*.txt).
+  fonts:
+    # Display / branding face — rounded, friendly, game-like.
+    - family: Baloo
+      fonts:
+        - asset: assets/fonts/Baloo2.ttf
+    # UI / body face — high legibility at small sizes.
+    - family: Plus Jakarta Sans
+      fonts:
+        - asset: assets/fonts/PlusJakartaSans.ttf
