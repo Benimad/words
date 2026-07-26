@@ -1,4 +1,4 @@
-package com.wordquest.game
+package com.app.wordquest
 
 import io.flutter.embedding.android.FlutterActivity
 

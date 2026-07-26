@@ -21,7 +21,8 @@ if (hasReleaseKeystore) {
 }
 
 android {
-    namespace = "com.wordquest.game"
+    // Must stay in sync with `applicationId` below — see the note there.
+    namespace = "com.app.wordquest"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
@@ -35,7 +36,15 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.wordquest.game"
+        // This is the app's permanent identity on Google Play and CANNOT be
+        // changed after the first release — a different value is a different
+        // app, with no upgrade path for existing installs.
+        //
+        // It also seeds the authority of every ContentProvider merged in by
+        // libraries (androidx-startup, mobileadsinitprovider, ...). Play
+        // rejects an upload whose authorities collide with another developer's
+        // app, so this value must be one you actually own.
+        applicationId = "com.app.wordquest"
 
         // google_mobile_ads 5.x requires API 23+.
         minSdk = maxOf(flutter.minSdkVersion, 23)
